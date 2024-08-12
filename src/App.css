@@ -3,4 +3,12 @@
   position: relative;
   width: 1200px;
   height: 2000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.drawing{
+  position: absolute;
+  top: 136px;
+  left: 0;
 }

@@ -1,8 +1,11 @@
 import './App.css';
 import { parseJsonData } from './utils/jsonParser';
 import PageContent from './components/PageContent';
-import pageDataRaw from './data/bookInfo.json';
+// import pageDataRaw from './data/2A_21a.json';
+import pageDataRaw from './data/B_1a.json';
 import React, { useState, useEffect } from 'react';
+import { ReactSketchCanvas } from "react-sketch-canvas";
+// import axios from 'axios';
 
 // getResizeEventListener 함수 정의
 export const getResizeEventListener = (standardWidth, standardHeight) => {
@@ -43,6 +46,7 @@ function App() {
     setPageData(jsonData);
   }, []);
 
+
   useEffect(() => {
     const resizeListener = getResizeEventListener(1200, 2000);
 
@@ -61,6 +65,12 @@ function App() {
   return (
     <div id="App" className='app-container'>
       <PageContent pageData={pageData} />
+      <ReactSketchCanvas className='drawing'
+        width="1200px"
+        height="1864px"
+        canvasColor="transparent"
+        strokeColor="#000"
+      />
     </div>
   );
 }

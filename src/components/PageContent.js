@@ -6,10 +6,15 @@ import ScenarioPlayer from './ScenarioPlayer/ScenarioPlayer';
 import AudioPlayer from './AudioPlayer/AudioPlayer';
 import './PageContent.css';
 import StartButton from './StartButton/StartButton';
+import IndicatorButton from './IndicatorButton/IndicatorButton';
+import Speaker from './Speaker/Speaker';
+import SubmitButton from './SubmitButton/SubmitButton';
 
 const PageContent = ({ pageData }) => {
     const page = pageData.pages[0];
-    const startScenario = page.scenarios.find(s => s.id === 'Scenario_Start');
+    // const startScenario = page.scenarios.find(s => s.id === 'Scenario_Start');
+    const startScenario = page.scenarios[0];
+
     const [itemVisibility, setItemVisibility] = useState({});
     const [isScenarioRunning, setIsScenarioRunning] = useState(false);
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -28,6 +33,7 @@ const PageContent = ({ pageData }) => {
 
     // 시나리오가 끝났을 때 호출될 함수
     const handleScenarioEnd = useCallback(() => {
+        console.log("시나리오 끝")
         setIsScenarioRunning(false);
         setIsAudioPlaying(false);
     }, []);
@@ -48,11 +54,14 @@ const PageContent = ({ pageData }) => {
                 if (item.type === 'focus') {
                     return <FocusItem key={item.guid} position={item.position} isVisible={isVisible} focusIndex={item.focusIndex} />;
                 } else if (item.type === 'write') {
-                    return <WriteItem key={item.guid} item={item.position} />;
+                    return <WriteItem key={item.guid} position={item.position} />;
                 } else if (item.type === 'click') {
-                    return <ClickItem key={item.guid} item={item.position} />;
+                    // console.log("click: ", item)
+                    return <ClickItem key={item.guid} item={item.position} clickEvent={item.clickEvent} />;
+                } else if (item.type === 'sound'){
+                    // console.log("sound: ", item)
                 }
-
+                
                 return null;
             })}
             {isScenarioRunning && (
@@ -78,6 +87,10 @@ const PageContent = ({ pageData }) => {
             </button> */}
 
             <StartButton onClick={handleStartScenario} disabled={isScenarioRunning} />
+            <IndicatorButton />
+            <Speaker />
+
+            <SubmitButton />
         </div>
     );
 };
