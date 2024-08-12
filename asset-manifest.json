@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Kumon-Test/static/css/main.aa161399.css",
+    "main.js": "/Kumon-Test/static/js/main.11251dcb.js",
+    "static/js/453.5b84a7c0.chunk.js": "/Kumon-Test/static/js/453.5b84a7c0.chunk.js",
+    "static/media/KCFL_2A_21a.mp3": "/Kumon-Test/static/media/KCFL_2A_21a.30a93edd4e9e76f5935e.mp3",
+    "static/media/2A_21a.png": "/Kumon-Test/static/media/2A_21a.8d5235da389c592625a1.png",
+    "static/media/focusItem0.png": "/Kumon-Test/static/media/focusItem0.c2e5ff647baf9bfd744e.png",
+    "index.html": "/Kumon-Test/index.html",
+    "main.aa161399.css.map": "/Kumon-Test/static/css/main.aa161399.css.map",
+    "main.11251dcb.js.map": "/Kumon-Test/static/js/main.11251dcb.js.map",
+    "453.5b84a7c0.chunk.js.map": "/Kumon-Test/static/js/453.5b84a7c0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa161399.css",
+    "static/js/main.11251dcb.js"
+  ]
+}
