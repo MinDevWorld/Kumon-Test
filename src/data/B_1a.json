@@ -108,63 +108,63 @@
              }
           ],
           "scenarios":[
-             {
-                "guid":"2f72f57f-7fe4-4ff5-87bc-c7f71e9c90df",
-                "scenarioId":"Scenario_start",
-                "timeline":[
-                   {
-                      "itemGuid":"fdc8909a-95c2-4afc-bf25-bb0a4ede8656",
-                      "timelineType":"SoundPlay",
-                      "keyframes":[
-                         {
-                            "time":0
-                         }
-                      ]
-                   },
-                   {
-                      "itemGuid":"270dbafc-eff7-496e-ac8f-dcffac32fad8",
-                      "timelineType":"FocusOnOff",
-                      "keyframes":[
-                         {
-                            "time":5.0625,
-                            "value":true
-                         },
-                         {
-                            "time":6.39375019073486,
-                            "value":false
-                         }
-                      ]
-                   },
-                   {
-                      "itemGuid":"0eb83f09-cc6c-421b-9459-9fd846af7182",
-                      "timelineType":"FocusOnOff",
-                      "keyframes":[
-                         {
-                            "time":7.05000114440918,
-                            "value":true
-                         },
-                         {
-                            "time":8.65382194519043,
-                            "value":false
-                         }
-                      ]
-                   },
-                   {
-                      "itemGuid":"00000000-0000-0000-0000-000000000000",
-                      "timelineType":"WriteOnOff",
-                      "keyframes":[
-                         {
-                            "time":10.3801345825195,
-                            "value":true
-                         }
-                      ]
-                   }
-                ],
-                "finishEvent":{
-                   "eventType":"None",
-                   "linkGuid":"00000000-0000-0000-0000-000000000000"
-                }
-             },
+            {
+               "guid":"2f72f57f-7fe4-4ff5-87bc-c7f71e9c90df",
+               "scenarioId":"Scenario_start",
+               "timeline":[
+                  {
+                     "itemGuid":"fdc8909a-95c2-4afc-bf25-bb0a4ede8656",
+                     "timelineType":"SoundPlay",
+                     "keyframes":[
+                        {
+                           "time":0
+                        }
+                     ]
+                  },
+                  {
+                     "itemGuid":"270dbafc-eff7-496e-ac8f-dcffac32fad8",
+                     "timelineType":"FocusOnOff",
+                     "keyframes":[
+                        {
+                           "time":5.0625,
+                           "value":true
+                        },
+                        {
+                           "time":6.39375019073486,
+                           "value":false
+                        }
+                     ]
+                  },
+                  {
+                     "itemGuid":"0eb83f09-cc6c-421b-9459-9fd846af7182",
+                     "timelineType":"FocusOnOff",
+                     "keyframes":[
+                        {
+                           "time":7.05000114440918,
+                           "value":true
+                        },
+                        {
+                           "time":8.65382194519043,
+                           "value":false
+                        }
+                     ]
+                  },
+                  {
+                     "itemGuid":"00000000-0000-0000-0000-000000000000",
+                     "timelineType":"WriteOnOff",
+                     "keyframes":[
+                        {
+                           "time":10.3801345825195,
+                           "value":true
+                        }
+                     ]
+                  }
+               ],
+               "finishEvent":{
+                  "eventType":"None",
+                  "linkGuid":"00000000-0000-0000-0000-000000000000"
+               }
+            },
              {
                 "guid":"b304dbad-7f46-4879-bf47-c886bd02c57f",
                 "scenarioId":"Scenario_finish",
@@ -185,7 +185,12 @@
                    "linkGuid":"00000000-0000-0000-0000-000000000000"
                 }
              }
-          ]
+          ],
+          "title_1":"구몬 중국어",
+          "title_2":"B 1a",
+          "subtitle_1":"함께 식사하기1",
+          "subtitle_2":"你吃饭了吗?",
+          "subtitle_head":""
        }
     ],
     "resourceList":[

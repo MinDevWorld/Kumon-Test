@@ -101,8 +101,8 @@ const parseWriteAreaItem = (item) => ({
         linkGuid: item.enterEvent.linkGuid
     },
     finishEvent: {
-        eventType: item.enterEvent.eventType,
-        linkGuid: item.enterEvent.linkGuid
+        eventType: item.finishEvent.eventType,
+        linkGuid: item.finishEvent.linkGuid
     }
 });
 

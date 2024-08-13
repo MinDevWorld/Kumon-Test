@@ -4,7 +4,7 @@ import PageContent from './components/PageContent';
 // import pageDataRaw from './data/2A_21a.json';
 import pageDataRaw from './data/B_1a.json';
 import React, { useState, useEffect } from 'react';
-import { ReactSketchCanvas } from "react-sketch-canvas";
+
 // import axios from 'axios';
 
 // getResizeEventListener 함수 정의
@@ -25,12 +25,16 @@ export const getResizeEventListener = (standardWidth, standardHeight) => {
     // style.zoom을 이용하여, 화면을 크기를 조정
     app.style.zoom = height / standardHeight;
 
+    // app.style.transform = `scale(${height / standardHeight})`;
+    // app.style.transformOrigin = '50 50'; // Scale from the top-left corner
+
     if (height > root.clientHeight) {
       height = root.clientHeight;
       width = height * (standardWidth / standardHeight);
       
       // style.zoom을 이용하여, 화면을 크기를 조정
       app.style.zoom = width / standardWidth;
+      // app.style.transform = `scale(${width / standardWidth})`;
     }
   };
 };
@@ -65,12 +69,6 @@ function App() {
   return (
     <div id="App" className='app-container'>
       <PageContent pageData={pageData} />
-      <ReactSketchCanvas className='drawing'
-        width="1200px"
-        height="1864px"
-        canvasColor="transparent"
-        strokeColor="#000"
-      />
     </div>
   );
 }

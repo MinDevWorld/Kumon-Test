@@ -1,7 +1,7 @@
 // src/components/AudioPlayer/AudioPlayer.js
 import React, { useRef, useEffect } from 'react';
 
-const AudioPlayer = ({ audioSrc, isPlaying }) => {
+const AudioPlayer = ({item, audioSrc, isPlaying, onAudioPlaying }) => {
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -12,7 +12,13 @@ const AudioPlayer = ({ audioSrc, isPlaying }) => {
       audioRef.current.currentTime = 0;
     }
   }, [isPlaying]);
-  return <audio ref={audioRef} src={audioSrc} />;
+
+  const handleEnded = () => {
+    // console.log("오디오 끝")
+    onAudioPlaying(item, false)
+  }
+
+  return <audio ref={audioRef} src={audioSrc} onEnded={handleEnded} />;
 };
 
 export default AudioPlayer;

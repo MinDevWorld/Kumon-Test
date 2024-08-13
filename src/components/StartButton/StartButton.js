@@ -5,7 +5,10 @@ const StartButton = ({onClick, disabled}) => {
     const [isClicked, setIsClicked] = useState(false);
 
     return (
-    // <div className='btn-start' onClick={()=> {
+    // <div className= {isClicked ? 'btn-start clicked': 'btn-start'} onClick={()=> {
+    //     onClick();
+    //     setIsClicked(true);
+    // }} disabled = {disabled}></div>
     <div className= {isClicked ? 'btn-start clicked': 'btn-start'} onClick={()=> {
         onClick();
         setIsClicked(true);
