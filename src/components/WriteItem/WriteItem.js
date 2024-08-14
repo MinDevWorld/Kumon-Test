@@ -1,7 +1,7 @@
 import React from "react";
 import './WriteItem.css';
 
-const WriteItem = ({position, enterEvent, finishEvent}) => {
+const WriteItem = ({position, enterEvent, finishEvent, onScenarioPlay}) => {
     const style = {
         left: `${600 + position.x - position.width/2}px`,
         top: `${1000 - position.y - position.height/2}px`,
@@ -11,7 +11,7 @@ const WriteItem = ({position, enterEvent, finishEvent}) => {
 
     const mouseupHandler = () => {
         if(finishEvent.eventType !== "None"){
-            console.log("mouseup");
+            onScenarioPlay(finishEvent.linkGuid);
         }else{
             return
         }

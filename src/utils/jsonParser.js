@@ -21,7 +21,12 @@ const parsePages = (pageList) => {
     return pageList.map(page => ({
         pageImg: page.pageImageGuid,
         items: parsePageItems(page.pageItemList),
-        scenarios: parseScenarios(page.scenarios)
+        scenarios: parseScenarios(page.scenarios),
+        title_1: page.title_1,
+        title_2: page.title_2,
+        subtitle_1: page.subtitle_1,
+        subtitle_2: page.subtitle_2,
+        subtitle_head: page.subtitle_head
     }));
 };
     

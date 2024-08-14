@@ -33,7 +33,7 @@ import { useState, useEffect, useCallback } from 'react';
 //   return null;
 // };
 
-const ScenarioPlayer = ({ scenario, onItemVisibilityChange, onAudioPlaying, onScenarioEnd }) => {
+const ScenarioPlayer = ({ scenario, onItemVisibilityChange, onAudioPlaying, onScenarioRunning, onScenarioEnd }) => {
  
   const updateItemVisibility = useCallback(() => {
     if (!scenario) return;
@@ -43,16 +43,17 @@ const ScenarioPlayer = ({ scenario, onItemVisibilityChange, onAudioPlaying, onSc
         setTimeout(() => {
           if(timeline.type === 'FinishOn'){
             onScenarioEnd()
-          }else if (timeline.type === 'FocusOnOff') {
+          }else if (timeline.type === 'FocusOnOff' || timeline.type === 'ClickOnOff') {
             onItemVisibilityChange(timeline.guid, keyframe.value);
           } else if (timeline.type === 'SoundPlay'){
             onAudioPlaying(timeline.guid, true);
-          }
+          } 
           
         }, keyframe.time * 1000);
       });
 
     });
+    onScenarioRunning(false);
   }, [scenario, onItemVisibilityChange]);
 
   useEffect(() => {

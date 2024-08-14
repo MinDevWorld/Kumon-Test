@@ -5,7 +5,7 @@ const SubmitButton = ({isScenarioEnd}) => {
     // const [isClicked, setIsClicked] = useState(false);
 
     return (
-        <div className='btn-submit' style={{"display": isScenarioEnd ? "none": "block"}}>
+        <div className='btn-submit' style={{"display": isScenarioEnd ? "block": "none"}}>
 
         </div>
     )
