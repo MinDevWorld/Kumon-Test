@@ -92,7 +92,7 @@ const PageContent = ({ pageData }) => {
                 if (item.type === 'focus') {
                     return <FocusItem key={item.guid} position={item.position} isVisible={isVisible} focusIndex={item.focusIndex} />;
                 } else if (item.type === 'write') {
-                    return <WriteItem key={item.guid} position={item.position} enterEvent={item.enterEvent} finishEvent={item.finishEvent} onScenarioPlay={handleClickItemInteraction}/>;
+                    return <WriteItem key={item.guid} position={item.position} enterEvent={item.enterEvent} finishEvent={item.finishEvent} onAudioPlaying={handleAudioPlaying} onScenarioPlay={handleClickItemInteraction}/>;
                 } else if (item.type === 'click') {
                     return <ClickItem key={item.guid} position={item.position} isVisible={isVisible} clickEvent={item.clickEvent} onAudioPlaying={handleAudioPlaying} onScenarioStart={handleClickItemInteraction} />;
                 } else if (item.type === 'sound'){

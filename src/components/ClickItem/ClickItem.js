@@ -11,9 +11,7 @@ const ClickItem = ({position, isVisible, clickEvent, onAudioPlaying, onScenarioS
     }
 
     const updateState = useCallback(() => {
-        
-        if(clickEvent.eventType === "None") return;
-        else if(clickEvent.eventType === "SoundPlay"){
+       if(clickEvent.eventType === "SoundPlay"){
             onAudioPlaying(clickEvent.linkGuid, true);
         }else if (clickEvent.eventType === "ScenarioPlay"){
             onScenarioStart(clickEvent.linkGuid);
