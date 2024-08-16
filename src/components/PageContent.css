@@ -63,3 +63,10 @@
     color: #252525;
     margin-right: 24px;
 }
+.sigCanvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

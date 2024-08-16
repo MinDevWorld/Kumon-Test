@@ -11,6 +11,13 @@ import Speaker from './Speaker/Speaker';
 import SubmitButton from './SubmitButton/SubmitButton';
 import '../fonts/Font.css';
 import titleArrow from '../assets/images/title-arrow.png';
+import ReactSignatureCanvas from 'react-signature-canvas';
+
+/*
+    ReactSignatureCanvas 사용을 위해 라이브러리 설치가 필요합니다.
+    설치: npm i -S react-signature-canvas
+    참고: https://github.com/agilgur5/react-signature-canvas
+*/
 
 const PageContent = ({ pageData }) => {
     const page = pageData.pages[0];
@@ -76,10 +83,53 @@ const PageContent = ({ pageData }) => {
     // 오디오 파일 경로 찾기
     var audioSrc = null;
 
+     // ReactSignatureCanvas
+    const sigCanvas = useRef(null);
+    const [appStyle, setAppStyle] = useState({top: 0, left: 0, width: 0, height: 0, zoom: 1});
+
+
+    useEffect(() => {
+        const resizeWindow = () => {
+            const appElement = document.getElementById('App');
+            if (appElement) {
+                const zoom = window.getComputedStyle(appElement).zoom || 1;
+
+                setAppStyle({
+                    top: appElement.offsetTop,
+                    left: appElement.offsetLeft,
+                    width: appElement.offsetWidth,
+                    height: appElement.offsetHeight,
+                    zoom: parseFloat(zoom)
+                });
+
+                const canvas = sigCanvas.current.getCanvas();
+                const context = canvas.getContext('2d');
+
+                console.log(window.getComputedStyle(appElement).zoom)
+
+                context.setTransform(1/zoom, 0, 0, 1/zoom,
+                    appElement.offsetLeft*(1/zoom)-appElement.offsetLeft,
+                    appElement.offsetTop*(1/zoom)-appElement.offsetTop);
+            }
+        };
+
+        window.addEventListener('resize', resizeWindow);
+
+        resizeWindow();
+
+        // Clean up the event listener on component unmount
+        return () => window.removeEventListener('resize', resizeWindow);
+    }, []);
+
     return (
         <div className='page' style={{
           backgroundImage: `url(${background})`
         }}> 
+            <ReactSignatureCanvas 
+                ref={sigCanvas}
+                penColor='black'
+                canvasProps={{width: 1200, height: 2000, className: 'sigCanvas'}}
+            />
             <div className='title'> 
                 <p className='title-1'>{page.title_1}</p>
                 <img className='title-arrow' src={`${titleArrow}`} />

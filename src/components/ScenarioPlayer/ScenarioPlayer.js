@@ -33,35 +33,3 @@ const ScenarioPlayer = ({ scenario, onItemVisibilityChange, onAudioPlaying, onSc
 
 
 export default ScenarioPlayer;
-
-// const ScenarioPlayer = ({ scenario, onItemVisibilityChange, onAudioPlaying, onScenarioEnd }) => {
-//   const [currentTime, setCurrentTime] = useState(0);
-//   const updateItemVisibility = useCallback(() => {
-//     if (!scenario) return;
-//     scenario.timeline.forEach((timeline) => {
-//       if (timeline.type === 'FocusOnOff') {
-//         const lastKeyframe = timeline.keyframes
-//           .filter((kf) => kf.time <= currentTime)
-//           .pop();
-//         if (lastKeyframe) {
-//           onItemVisibilityChange(timeline.guid, lastKeyframe.value);
-//         }
-//       } 
-//     });
-//   }, [currentTime, scenario, onItemVisibilityChange]);
-
-//   useEffect(() => {
-//     const updateTime = () => {
-//       setCurrentTime(prevTime => prevTime + 0.1);
-//     };
-
-//     const timer = setInterval(updateTime, 100);
-//     return () => clearInterval(timer);
-//   }, []);
-
-//   useEffect(() => {
-//     updateItemVisibility();
-//   }, [currentTime, updateItemVisibility]);
-  
-//   return null;
-// };
