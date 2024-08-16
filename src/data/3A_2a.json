@@ -107,7 +107,7 @@
                     "guid":"23adf5e1-b5fa-4fb7-880a-17fa08cf1357",
                     "itemId":"Click_1",
                     "itemType":"Click",
-                    "isVisible":false,
+                    "isVisible":true,
                     "x":-305,
                     "y":273,
                     "width":376,

@@ -15,7 +15,15 @@ import titleArrow from '../assets/images/title-arrow.png';
 const PageContent = ({ pageData }) => {
     const page = pageData.pages[0];
     const [scenario, setScenario] = useState(page.scenarios[0]);
-    const [itemVisibility, setItemVisibility] = useState({});
+    const [itemVisibility, setItemVisibility] = useState(() => {
+        // 초기 visibility 상태를 설정합니다.
+        const initialVisibility = {};
+        page.items.forEach(item => {
+            initialVisibility[item.guid] = item.isVisible;
+        });
+        return initialVisibility;
+    });
+
     const [isScenarioRunning, setIsScenarioRunning] = useState(false);
     const [isScenarioEnd, setIsScenarioEnd] = useState(false)
     const [isAudioPlaying, setIsAudioPlaying] = useState({});
@@ -86,6 +94,7 @@ const PageContent = ({ pageData }) => {
            
             
             {page.items.map(item => {
+                
                 const isVisible = itemVisibility[item.guid];
                 const isPlaying = isAudioPlaying[item.guid];
 
